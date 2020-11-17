@@ -1,47 +1,69 @@
 <?php
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Spital</title>
+    </head>
+    <body>
+        <header>
+		 
+        </header>
+        <h1>Spitalul Judetean</h1>
+    <section>
+<h2>Prezentare proiect</h2>
+<p>Acesta este site-ul oficial al spitalului si va avea rolul de a face lucrurile simple pentru toti pacientii.
+    Pe acest site puteti gasi diferite informatii despre activitatile spitalului, precum si programul de lucru al fiecarui doctor.
+ </p>
+ <p>Pe acest site, vor exista conturi de tip admin, doctor si client. Utlizatorii isi pot crea un cont de tip client alegand un username si o parola </p>
 
-// Load Composer's autoloader
-require 'vendor/autoload.php';
+    </section>
 
-// Instantiation and passing `true` enables exceptions
-$mail = new PHPMailer(true);
+    <section>
+        <h2>Tipuri de utilizatori</h2>
+        <h3>Clienti</h3>
 
-try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp1.example.com';                    // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'user@example.com';                     // SMTP username
-    $mail->Password   = 'secret';                               // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        <p>Clientii vor putea:</p>
+        <ul>
+            <li>Sa vada istoricul vizitelor in spital</li>
+            <li>Sa vada informatii despre programările viitoare </li>
+            <li>Sa faca o programare pentru o vizita la spital</li>
+          </ul>
 
-    //Recipients
-    $mail->setFrom('from@example.com', 'Mailer');
-    $mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
-    $mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('info@example.com', 'Information');
-    $mail->addCC('cc@example.com');
-    $mail->addBCC('bcc@example.com');
+          <h3>Doctori</h3>
+    
+        <p>Doctorii vor putea: </p>
+        <ul>
+            <li>Sa vada programul de lucru</li>
+            <li>Sa vada informatii despre programarile pacientilor lor </li>
+        </ul>
 
-    // Attachments
-    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+          <p>Adminii vor putea: </p>
+        <ul>
+            <li>Sa modifice programul de lucru al doctorilor sau programarea unui pacient</li>
+            <li>Sa acceseze baza de date cu stocul de medicamente si de instrumente ale spitalului</li>
+            <li>Sa modifice stocul spitalului</li>
+          </ul>
+        
+            </section>
 
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
+
+    <section>
+        <h2>Baza de date</h2>
+        <p>O parte din tabelele bazei de date vor fi:</p>
+        <ul>
+            <li>doctori</li>
+            <li>pacienti</li>
+            <li>programări</li>
+            <li>stoc_medicamente</li>
+          </ul>
+
+            </section>
+        
+
+
+    </body>
+    </html>
+
+?>
