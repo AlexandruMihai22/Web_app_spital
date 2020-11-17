@@ -1,5 +1,4 @@
-<?php
-<!DOCTYPE html>
+
 <html lang="ro">
     <head>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
